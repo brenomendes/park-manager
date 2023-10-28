@@ -1,0 +1,1 @@
+enum ParkEvent { entry, exit }
