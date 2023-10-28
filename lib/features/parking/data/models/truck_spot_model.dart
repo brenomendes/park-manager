@@ -23,7 +23,24 @@ class TruckSpotModel extends TruckSpot {
       spot: json['spot'],
       plate: json['plate'],
       entry: json['entry'],
-      exit: json['json'],
+      exit: json['exit'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'spot': spot,
+      'plate': plate,
+      'entry': entry,
+      'exit': exit,
+    };
+  }
+
+  @override
+  List<Object> get props => [
+        spot,
+        plate,
+        entry,
+        exit!,
+      ];
 }
