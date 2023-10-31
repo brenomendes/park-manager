@@ -4,7 +4,7 @@ import 'package:park_manager/features/parking/domain/entities/truck_spot.dart';
 
 abstract class TruckSpotRepository {
   Future<Either<Failure, List<TruckSpot>>> getTruckSpots();
+  Future<Either<Failure, bool>> setEntryTruckSpot(TruckSpot truckSpot);
+  Future<Either<Failure, bool>> setExitTruckSpots(TruckSpot truckSpot);
   Future<Either<Failure, List<TruckSpot>>> getDayHistoricTruckSpots();
-  Future<Either<Failure, TruckSpot>> setEntryTruckSpots(TruckSpot truckSpot);
-  Future<Either<Failure, TruckSpot>> setExitTruckSpots(int spot, DateTime exitTime);
 }

@@ -1,23 +1,26 @@
 import 'package:equatable/equatable.dart';
 
 class TruckSpot extends Equatable {
+  final String? id;
   final int spot;
   final String plate;
-  final DateTime entry;
-  final DateTime? exit;
+  final String entry;
+  final String exit;
 
-  TruckSpot({
+  const TruckSpot({
+    this.id,
     required this.spot,
     required this.plate,
     required this.entry,
-    this.exit,
+    required this.exit,
   });
 
   @override
   List<Object> get props => [
+        id!,
         spot,
         plate,
         entry,
-        exit!,
+        exit,
       ];
 }

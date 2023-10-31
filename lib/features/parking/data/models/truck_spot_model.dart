@@ -1,38 +1,32 @@
 import 'package:park_manager/features/parking/domain/entities/truck_spot.dart';
 
 class TruckSpotModel extends TruckSpot {
+  final String? id;
   final int spot;
   final String plate;
-  final DateTime entry;
-  final DateTime? exit;
+  final String entry;
+  final String exit;
 
   TruckSpotModel({
+    this.id,
     required this.spot,
     required this.plate,
     required this.entry,
-    this.exit,
+    required this.exit,
   }) : super(
+          id: id,
           entry: entry,
           plate: plate,
           spot: spot,
           exit: exit,
         );
 
-  factory TruckSpotModel.fromJson(Map<String, dynamic> json) {
-    return TruckSpotModel(
-      spot: json['spot'],
-      plate: json['plate'],
-      entry: json['entry'],
-      exit: json['exit'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
+  static Map<String, dynamic> toJson(TruckSpot truckSpot) {
     return {
-      'spot': spot,
-      'plate': plate,
-      'entry': entry,
-      'exit': exit,
+      'spot': truckSpot.spot,
+      'plate': truckSpot.plate,
+      'entry': truckSpot.entry,
+      'exit': truckSpot.exit,
     };
   }
 
@@ -41,6 +35,6 @@ class TruckSpotModel extends TruckSpot {
         spot,
         plate,
         entry,
-        exit!,
+        exit,
       ];
 }
